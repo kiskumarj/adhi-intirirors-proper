@@ -1,0 +1,29 @@
+#igonre .env
+server/.env  
+
+
+# Logs
+adhi/logs
+*.log
+adhi/npm-debug.log*
+adhi/yarn-debug.log*
+adhi/yarn-error.log*
+adhi/pnpm-debug.log*
+adhi/lerna-debug.log*
+
+adhi/node_modules
+adhi/dist
+adhi/dist-ssr  
+adhi/*.local
+
+# Editor directories and files
+adhi/.vscode/*
+adhi/!.vscode/extensions.json
+adhi/.idea
+adhi/.DS_Store
+adhi/*.suo
+adhi/*.ntvs*
+adhi/*.njsproj
+adhi/*.sln
+adhi/*.sw?
+

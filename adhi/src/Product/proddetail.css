@@ -1,0 +1,27 @@
+.single-detail{
+    float: right;
+    margin-right: 50%;
+}
+.single-img{
+    width: 450px;
+    height: 450px;
+    border-radius: 20px;
+    margin-left: 5%;
+}
+.single-but{
+    height: 35px;
+    width: 70px;
+    cursor: pointer;
+    border-style: none;
+    border-radius: 20px;
+    background-color: rgba(255, 5, 130, 0.982);
+    font-family: 'Poppins', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    transition: 300ms;
+}
+.single-but:hover {
+    transform: translatey(15px)
+}
+.single-fornt{
+    font-style: italic;
+    font-size: large;
+}
