@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import './Admin.css'; 
+import './admin.css'; // Import your custom CSS file
 import Sidenav from './Sidenav';
 import axios from 'axios';
 import { Navigate, useNavigate } from 'react-router-dom';
