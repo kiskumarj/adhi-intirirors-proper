@@ -19,11 +19,11 @@ app.use(express.static('publuc'))
 require('dotenv').config()
 const jwtSecretKey = process.env.JWT_SECRET_KEY;
 const mongodbUri = process.env.MONGODB_URI;
-app.listen(5000, (err) => {
+app.listen(5001, (err) => {
   if (err) {
     console.error(`Port 5000 is already in use.`);
   } else {
-    console.log(`Server is running on port 5000`);
+    console.log(`Server is running on port 5001`);
   }
 })
 database.connect(mongodbUri, {
