@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "proxy": "http://locahost:5001",
+  "proxy": "http://locahost:5000",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
