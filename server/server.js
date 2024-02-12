@@ -17,8 +17,8 @@ app.use(cors())
 app.use(express.json())
 app.use(express.static('publuc'))
 require('dotenv').config()
-const jwtSecretKey = process.env.JWT_SECRET_KEY;
-const mongodbUri = process.env.MONGODB_URI;
+const jwtSecretKey = 'adhiinteriors12####b2jwtstoken' ;
+
 app.listen(5000, (err) => {
   if (err) {
     console.error(`Port 5000 is already in use.`);
@@ -26,7 +26,7 @@ app.listen(5000, (err) => {
     console.log(`Server is running on port 5000`);
   }
 })
-database.connect(mongodbUri, {
+database.connect('mongodb://127.0.0.1:27017/form', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
