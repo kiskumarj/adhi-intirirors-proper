@@ -12,7 +12,7 @@ const path = require('path')
 const { default: mongoose } = require('mongoose')
 const Inquiry = require('./model/order');
 app.use(bodyprs.json())
-const cors = require('cors');
+app.use(cors())
 app.use(express.json())
 app.use(express.static('publuc'))
 require('dotenv').config()
