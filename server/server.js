@@ -2,6 +2,7 @@ const express = require('express')
 const database = require('mongoose')
 const jwt = require('jsonwebtoken')
 const app = express()
+const cors = require('cors');
 const multer = require('multer')
 const Product = require('./model/Product')
 const { category, subcategory, warranty } = require('./model/category')
@@ -17,7 +18,6 @@ app.use(express.json())
 app.use(express.static('publuc'))
 require('dotenv').config()
 const jwtSecretKey = 'adhiinteriors12####b2jwtstoken' ;
-app.use(cors());
 app.listen(5000, (err) => {
   if (err) {
     console.error(`Port 5000 is already in use.`);
