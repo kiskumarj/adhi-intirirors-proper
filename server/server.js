@@ -12,10 +12,12 @@ const path = require('path')
 const { default: mongoose } = require('mongoose')
 const Inquiry = require('./model/order');
 app.use(bodyprs.json())
+const cors = require('cors');
 app.use(express.json())
 app.use(express.static('publuc'))
 require('dotenv').config()
-const jwtSecretKey = 'adhiinteriors12####b2jwtstoken';
+const jwtSecretKey = 'adhiinteriors12####b2jwtstoken' ;
+app.use(cors());
 app.listen(5000, (err) => {
   if (err) {
     console.error(`Port 5000 is already in use.`);
