@@ -2,7 +2,7 @@ const express = require('express')
 const database = require('mongoose')
 const jwt = require('jsonwebtoken')
 const app = express()
-const cors = require('cors');    
+const cors = require('cors');
 const multer = require('multer')
 const Product = require('./model/Product')
 const { category, subcategory, warranty } = require('./model/category')
@@ -25,7 +25,7 @@ app.listen(5000, (err) => {
     console.log(`Server is running on port 5000`);
   }
 })
-database.connect('mongodb://127.0.0.1:27017/form', {
+database.connect('mongodb://127.0.0.1:27017/form?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.1.3', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
