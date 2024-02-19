@@ -6,7 +6,7 @@ function Premiumchair() {
   useEffect(() => {
     // Fetch categories from your Express server
     axios
-      .get('http://localhost:5000/products/most-sell/pc:65a3104be082b4eb1af51552')
+      .get('https://api.adhiinteriors.com/products/most-sell/pc:65a3104be082b4eb1af51552')
       .then((response) => {
         setpresofa(response.data);
       })

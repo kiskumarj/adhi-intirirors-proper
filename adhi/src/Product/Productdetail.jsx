@@ -9,7 +9,7 @@ function Productdetail() {
     const [product, setproduct] = useState()
     const navigate = useNavigate()
     useEffect(() => {
-        axios.get(`http://localhost:5000/products/${productId}`)
+        axios.get(`https://api.adhiinteriors.com/products/${productId}`)
             .then((res) => {
 
                 setproduct(res.data)

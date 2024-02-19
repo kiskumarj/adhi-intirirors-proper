@@ -27,7 +27,7 @@ function Bookmodel() {
 
     try {
       // Send a POST request with form data
-      const response = await axios.post('http://localhost:5000/bookings', formData);
+      const response = await axios.post('https://api.adhiinteriors.com/bookings', formData);
 
       // Handle the response as needed (e.g., show a success message)
       console.log('Booking successful!', response.data);

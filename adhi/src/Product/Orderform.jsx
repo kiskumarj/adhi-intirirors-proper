@@ -31,7 +31,7 @@ function Orderform() {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:5000/submit-inquiry', {
+      const response = await axios.post('https://api.adhiinteriors.com/submit-inquiry', {
         modelNumber,
         subcategory,
         customerDetails,

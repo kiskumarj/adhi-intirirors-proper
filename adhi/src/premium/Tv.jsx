@@ -6,7 +6,7 @@ function Tv() {
   useEffect(() => {
     // Fetch categories from your Express server
     axios
-      .get('http://localhost:5000/products/most-sell/tv:65a31015e082b4eb1af5154e')
+      .get('https://api.adhiinteriors.com/products/most-sell/tv:65a31015e082b4eb1af5154e')
       .then((response) => {
         setpresofa(response.data);
       })

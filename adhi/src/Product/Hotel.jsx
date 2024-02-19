@@ -11,7 +11,7 @@ function Hotel() {
 
   useEffect(() => {
     // Fetch all products initially
-    axios.get('http://localhost:5000/products/sofa/ht:652290c17919a078826d08c6')
+    axios.get('https://api.adhiinteriors.com/products/sofa/ht:652290c17919a078826d08c6')
       .then((response) => {
         setProducts(response.data);
         setAllProducts(response.data);

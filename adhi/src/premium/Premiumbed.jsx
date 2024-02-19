@@ -6,7 +6,7 @@ function Premiumbed() {
   useEffect(() => {
     // Fetch categories from your Express server
     axios
-      .get('http://localhost:5000/products/most-sell/pb:65a308c9f1b2a735b717cc6e')
+      .get('https://api.adhiinteriors.com/products/most-sell/pb:65a308c9f1b2a735b717cc6e')
       .then((response) => {
         setpresofa(response.data);
       })

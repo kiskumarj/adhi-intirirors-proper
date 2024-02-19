@@ -11,7 +11,7 @@ function Sofa() {
 
   useEffect(() => {
     // Fetch all products initially
-    axios.get('http://localhost:5000/products/sofa/so:6522909a7919a078826d08c2')
+    axios.get('https://api.adhiinteriors.com/products/sofa/so:6522909a7919a078826d08c2')
       .then((response) => {
         setProducts(response.data);
         setAllProducts(response.data);

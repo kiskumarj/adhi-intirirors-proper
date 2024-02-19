@@ -11,7 +11,7 @@ function Outdoor() {
 
   useEffect(() => {
     // Fetch all products initially
-    axios.get('http://localhost:5000/products/sofa/od:652291127919a078826d08ca')
+    axios.get('https://api.adhiinteriors.com/products/sofa/od:652291127919a078826d08ca')
       .then((response) => {
         setProducts(response.data);
         setAllProducts(response.data);

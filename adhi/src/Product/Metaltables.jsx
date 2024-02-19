@@ -11,7 +11,7 @@ function Metaltables() {
 
   useEffect(() => {
     // Fetch all products initially
-    axios.get('http://localhost:5000/products/sofa/mt:6527da3074f1568ba858f9e9')
+    axios.get('https://api.adhiinteriors.com/products/sofa/mt:6527da3074f1568ba858f9e9')
       .then((response) => {
         setProducts(response.data);
         setAllProducts(response.data);

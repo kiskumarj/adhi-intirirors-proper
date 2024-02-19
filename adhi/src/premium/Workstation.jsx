@@ -6,7 +6,7 @@ function Workstation() {
     useEffect(() => {
         // Fetch categories from your Express server
         axios
-            .get('http://localhost:5000/products/most-sell/wsc:65a3107ee082b4eb1af51554')
+            .get('https://api.adhiinteriors.com/products/most-sell/wsc:65a3107ee082b4eb1af51554')
             .then((response) => {
                 setpresofa(response.data);
             })
