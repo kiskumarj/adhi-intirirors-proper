@@ -8,7 +8,7 @@ function Products() {
   const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
-    axios.get('http://localhost:5000/products')
+    axios.get('https://api.adhiinteriors.com/products')
       .then((response) => {
         setProducts(response.data);
       })

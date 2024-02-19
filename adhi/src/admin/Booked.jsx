@@ -11,7 +11,7 @@ function Booked() {
         // Fetch customer requests from the server
         const fetchCustomerRequests = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/getcustomerrequests'); 
+                const response = await axios.get('https://api.adhiinteriors.com/getcustomerrequests'); 
                 setCustomerRequests(response.data);
             } catch (error) {
                 console.error('Error fetching customer requests:', error);

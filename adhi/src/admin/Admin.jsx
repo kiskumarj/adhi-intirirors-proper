@@ -15,7 +15,7 @@ function Admin() {
   useEffect(() => {
     const fetchProductCount = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/productCount');
+        const response = await axios.get('https://api.adhiinteriors.com/productCount');
         setCount(response.data.count);
       } catch (error) {
         console.error(error);
@@ -24,7 +24,7 @@ function Admin() {
 
     const fetchOrderCount = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/orderCount');
+        const response = await axios.get('https://api.adhiinteriors.com/orderCount');
         setoCount(response.data.count);
       } catch (error) {
         console.error(error);
@@ -33,7 +33,7 @@ function Admin() {
 
     const fetchAskCount = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/askCount');
+        const response = await axios.get('https://api.adhiinteriors.com/askCount');
         setaCount(response.data.count);
       } catch (error) {
         console.error(error);
@@ -42,7 +42,7 @@ function Admin() {
 
     const fetchBookCount = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/bookCount');
+        const response = await axios.get('https://api.adhiinteriors.com/bookCount');
         setbCount(response.data.count);
       } catch (error) {
         console.error(error);
@@ -63,7 +63,7 @@ function Admin() {
         return;
       }
   
-      const response = await axios.post('http://localhost:5000/logout', null, {
+      const response = await axios.post('https://api.adhiinteriors.com/logout', null, {
         headers: {
           Accept: 'application/json, text/plain',
           authorization: token,

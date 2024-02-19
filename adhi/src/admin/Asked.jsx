@@ -11,7 +11,7 @@ function Asked() {
       // Fetch customer requests from the server
       const fetchCustomerRequests = async () => {
           try {
-              const response = await axios.get('http://localhost:5000/getasks'); // Replace with your API endpoint
+              const response = await axios.get('https://api.adhiinteriors.com/getasks'); // Replace with your API endpoint
               setCustomerRequests(response.data);
           } catch (error) {
               console.error('Error fetching customer requests:', error);

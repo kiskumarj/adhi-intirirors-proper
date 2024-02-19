@@ -18,7 +18,7 @@ function Login() {
   const handlelogin = async (e)=>{
     e.preventDefault()
     try{
-      const response = await axios.post('http://localhost:5000/login', auth)
+      const response = await axios.post('https://api.adhiinteriors.com/login', auth)
 
       if (response.status === 200) {
         pass('/admin')

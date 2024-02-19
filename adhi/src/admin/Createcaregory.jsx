@@ -15,7 +15,7 @@ function Createcategory() {
   useEffect(() => {
     // Fetch categories from your Express server
     axios
-      .get('http://localhost:5000/categories')
+      .get('https://api.adhiinteriors.com/categories')
       .then((response) => {
         setCategories(response.data);
       })

@@ -22,7 +22,7 @@ function Createproduct() {
     }
     const handlepost = (a) => {
         a.preventDefault()
-        axios.post('http://localhost:5000/product', productdata)
+        axios.post('https://api.adhiinteriors.com/product', productdata)
             .then((response) => {
                 console.log('Product added successfully:', response.data);
                 alert("product Created succesfully")
@@ -34,21 +34,21 @@ function Createproduct() {
     }
     useEffect(() => {
         // Fetch categories
-        axios.get('http://localhost:5000/categories')
+        axios.get('https://api.adhiinteriors.com/categories')
             .then((response) => {
                 setCategories(response.data);
             })
             .catch((error) => {
                 console.error('Error fetching categories:', error);
             });
-        axios.get('http://localhost:5000/subcategories')
+        axios.get('https://api.adhiinteriors.com/subcategories')
             .then((response) => {
                 setSubcategories(response.data);
             })
             .catch((error) => {
                 console.error('Error fetching categories:', error);
             });
-        axios.get('http://localhost:5000/warranty')
+        axios.get('https://api.adhiinteriors.com/warranty')
             .then((response) => {
                 setwarranties(response.data);
             })

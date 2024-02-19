@@ -27,7 +27,7 @@ const ImageUpload = () => {
     }
   };
   useEffect(() => {
-    axios.get("http://localhost:5000/uploads")
+    axios.get("https://api.adhiinteriors.com/uploads")
       .then((response) => {
         setgetimg(response.data.filename)
         console.log(response.data)
@@ -49,7 +49,7 @@ const ImageUpload = () => {
       <div>
      
         {geturl &&
-          <a>{`http://localhost:5000/${geturl}`}</a>
+          <a>{`https://api.adhiinteriors.com/${geturl}`}</a>
 
         }
       </div>

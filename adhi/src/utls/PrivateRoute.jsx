@@ -19,7 +19,7 @@ const PrivateRoute = () => {
           return;
         }
 
-        const response = await axios.get('http://localhost:5000/protected', {
+        const response = await axios.get('https://api.adhiinteriors.com/protected', {
           headers: {
             Accept: 'application/json, text/plain',
             authorization: token,

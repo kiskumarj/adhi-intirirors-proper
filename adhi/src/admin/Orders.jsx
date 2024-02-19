@@ -13,7 +13,7 @@ function Orders() {
     // Fetch data from the server
     const fetchRequests = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/get-inquiries');
+        const response = await axios.get('https://api.adhiinteriors.com/get-inquiries');
         setRequests(response.data);
         console.log(requests);
       } catch (error) {

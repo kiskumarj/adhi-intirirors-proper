@@ -40,7 +40,7 @@ function Home() {
   };
   const handlebuzzer = async (a) => {
     a.preventDefault()
-    axios.post('http://localhost:5000/postask', ask)
+    axios.post('https://api.adhiinteriors.com/postask', ask)
       .then((response) => {
         console.log('respone success', response.data);
         alert('response sent succesfully...')

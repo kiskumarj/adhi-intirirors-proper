@@ -19,7 +19,7 @@ const Signup = () => {
   const handleSubmit = async (d) => {
     d.preventDefault()
 
-    const data = axios.post('http://localhost:5000/signup', formData)
+    const data = axios.post('https://api.adhiinteriors.com/signup', formData)
       .then((response) => {
         // Handle the successful response here
         console.log(response.data);
