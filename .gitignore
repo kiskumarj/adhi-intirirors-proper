@@ -1,6 +1,6 @@
 #igonre .env
 server/.env  
-
+server/node_modules
 # Logs
 adhi/logs
 *.log
