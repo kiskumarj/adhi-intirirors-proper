@@ -12,7 +12,7 @@ function Office() {
   const push = 
   useEffect(() => {
     // Fetch all products initially
-    axios.get('/products/category/office')
+    axios.get('https://api.adhiinteriors.com/products/category/office')
       .then((response) => {
         setProducts(response.data);
         setAllProducts(response.data);
