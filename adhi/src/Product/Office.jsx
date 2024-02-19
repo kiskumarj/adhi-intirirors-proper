@@ -12,7 +12,7 @@ function Office() {
   const push = 
   useEffect(() => {
     // Fetch all products initially
-    axios.get('http://localhost:5000/products/category/office')
+    axios.get('/products/category/office')
       .then((response) => {
         setProducts(response.data);
         setAllProducts(response.data);
