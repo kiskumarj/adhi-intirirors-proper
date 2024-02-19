@@ -17,15 +17,17 @@ app.use(cors())
 app.use(express.json())
 app.use(express.static('publuc'))
 require('dotenv').config()
-const jwtSecretKey = 'adhiinteriors12####b2jwtstoken' ;
-app.listen(5000, (err) => {
+const jwtSecretKey = process.env.JWT_SECRET_KEY;
+const mongodbUri = process.env.MONGODB_URI;
+const PORT = process.env.PORT;
+app.listen(PORT, (err) => {
   if (err) {
     console.error(`Port 5000 is already in use.`);
   } else {
     console.log(`Server is running on port 5000`);
   }
 })
-database.connect('mongodb://127.0.0.1:27017/form?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.1.3', {
+database.connect(mongodbUri, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
