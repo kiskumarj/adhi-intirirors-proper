@@ -25,7 +25,7 @@ function Products() {
     }
 
     try {
-      await axios.delete(`http://localhost:5000/products/${productId}`);
+      await axios.delete(`https://api.adhiinteriors.com/products/${productId}`);
       setProducts(prevProducts => prevProducts.filter(product => product._id !== productId));
       console.log('Product deleted successfully');
     } catch (error) {
