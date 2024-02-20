@@ -16,7 +16,7 @@ const ImageUpload = () => {
     formData.append('image', file);
 
     try {
-      const response = await axios.post('http://localhost:5000/upload', formData);
+      const response = await axios.post('https://api.adhiinteriors.com/upload', formData);
       console.log('Image uploaded successfully:', response.data);
       alert('image added successfully...')
       setgeturl(response.data.filename)
