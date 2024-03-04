@@ -20,10 +20,26 @@ function Slider() {
         <Slide images={images} >
         {images.map((each, index) => (
           <div key={index} className="each-slide" >
-            <img src={each} alt={`Slide ${index}`} height={775} width={1500} style={{borderRadius}}/>
+            <img src={each} alt={`Slide ${index}`} height={775} width={1500} style={{borderRadius, maxWidth: '100%', height: 'auto', maxHeight: '100vh'}}/>
           </div>
         ))}
         </Slide>
+        <style>
+        {`
+          /* Responsive styles */
+          @media (max-width: 600px) {
+            .each-slide {
+              text-align: center;
+              
+            }
+            img {
+              width: 100%; /* Make images fill the container */
+              height: auto;
+              max-height: 50vh;
+            }
+          }
+        `}
+        </style>
     </div>
   )
 }
