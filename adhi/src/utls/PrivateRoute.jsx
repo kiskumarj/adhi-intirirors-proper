@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { ClipLoader } from 'react-spinners';
 import axios from 'axios';
-import { Navigate, Outlet } from 'react-router-dom';
-import { css } from '@emotion/react'; 
-
+import { Navigate, Outlet } from 'react-router-dom'; 
+import { css } from '@emotion/react';
 const PrivateRoute = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(null);
   const [loading, setLoading] = useState(true);

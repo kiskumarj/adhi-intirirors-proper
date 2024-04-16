@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import Sidenav from './Sidenav';
 import axios from 'axios';
+import React, { useEffect, useState } from 'react'
 import moment from 'moment';
+import Sidenav from './Sidenav';
 function Booked() {
-    document.body.style.display = 'flex';
-    const [customerRequests, setCustomerRequests] = useState([]);
+  const [customerRequests, setCustomerRequests] = useState([]);
     const [searchDate, setSearchDate] = useState('');
-
+    
     useEffect(() => {
         // Fetch customer requests from the server
         const fetchCustomerRequests = async () => {
@@ -30,50 +29,57 @@ function Booked() {
         setCustomerRequests(filteredRequests);
     };
 
-    return (
-        <div className="product-table">
-            <header>
-                <Sidenav />
-            </header>
-            <h1>Booked</h1>
-            <div>
-                <label htmlFor="search">enter the date</label>
-                <input
-                    type="text"
-                    id="search"
-                    value={searchDate}
-                    onChange={(e) => setSearchDate(e.target.value)}
-                />
-                <button onClick={handleSearch}>enter</button>
-            </div>
-            <table className="product-table">
-                <thead>
-                    <tr>
-                        <th>req-on</th>
-                        <th>Name</th>
-                        <th>Phone Number</th>
-                        <th>City</th>
-                        <th>Email</th>
-                        <th>Description</th>
+  return (
+    <div className="flex flex-col md:flex-row">
+  <header className="md:w-1/4">
+    <Sidenav />
+  </header>
+  <div className="md:w-3/4 px-4 py-6">
+    <h1 className="text-lg font-semibold mb-4">Booked</h1>
+    <div className="mb-4">
+      <label htmlFor="search" className="mr-2">Enter the date:</label>
+      <input
+        type="text"
+        id="search"
+        value={searchDate}
+        onChange={(e) => setSearchDate(e.target.value)}
+        className="border border-gray-300 rounded-md px-3 py-2"
+      />
+      <button onClick={handleSearch} className="btn bg-pink-500 rounded-md mb-2 mt-2 px-4 py-2 ml-4">
+        Enter
+      </button>
+    </div>
+    <div className="overflow-x-auto">
+      <table className="table-auto w-full">
+        <thead>
+          <tr>
+            <th className="px-4 py-2">Req-On</th>
+            <th className="px-4 py-2">Name</th>
+            <th className="px-4 py-2">Phone Number</th>
+            <th className="px-4 py-2">City</th>
+            <th className="px-4 py-2">Email</th>
+            <th className="px-4 py-2">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          {customerRequests.map((request) => (
+            <tr key={request._id}>
+              <td className="px-4 py-2">{moment(request.createdAt).format('YYYY-MM-DD HH:mm:ss')}</td>
+              <td className="px-4 py-2">{request.name}</td>
+              <td className="px-4 py-2">{request.phoneNumber}</td>
+              <td className="px-4 py-2">{request.city}</td>
+              <td className="px-4 py-2">{request.email}</td>
+              <td className="px-4 py-2">{request.description}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
 
-                    </tr>
-                </thead>
-                <tbody>
-                    {customerRequests.map((request) => (
-                        <tr key={request._id}>
-                            <td>{moment(request.createdAt).format('YYYY-MM-DD HH:mm:ss')}</td>
-                            <td>{request.name}</td>
-                            <td>{request.phoneNumber}</td>
-                            <td>{request.city}</td>
-                            <td>{request.email}</td>
-                            <td>{request.description}</td>
-
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
-        </div>
-    );
+  
+  )
 }
 
-export default Booked;
+export default Booked

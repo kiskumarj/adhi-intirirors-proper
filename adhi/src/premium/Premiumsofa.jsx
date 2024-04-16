@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import './premium.css'
+import { Link } from 'react-router-dom';
 import carproso from '../mycon/carproso.png'
+import Navbar from '../Page/Navbar';
 import axios from 'axios';
 function Premiumsofa() {
   const [presofa, setpresofa] = useState([])
@@ -15,24 +16,37 @@ function Premiumsofa() {
         console.error('Error fetching categories:', error);
       });
   }, []);
-
   return (
-    <div className='pre-sofa-main'>
-      <div className='pre-title'>
-        <h1>Premium Sofa</h1>
-        <p>most selling</p>
-        <img src={carproso} height={100} width={100} className='main-sofa-pg'></img>
+    <div className="pre-sofa-main">
+      <header>
+        <Navbar />
+      </header><br></br>
+      <div className="flex flex-col md:flex-row  ml-5 mt-20">
+        {/* Title */}
+        <div className="md:w-1/2 md:mr-4 text-center md:text-left ">
+          <h1 className="text-3xl font-bold mb-2 w-fit">Premium Sofa</h1>
+          <p className="text-gray-500 w-fit">Most selling</p>
+          <div className="w-16 h-16 mb-10">
+            <img src={carproso} className="w-16 h-16 relative left-48 bottom-14" alt="Bed" />
+          </div>
+        </div>
+
       </div>
-      <div className='ms-container'>
+
+      {/* Products */}
+      <div className="flex flex-wrap justify-center mt-4">
         {presofa.map((product) => (
-          <div key={product._id} className='prod-card'>
-            <img src={product.addimage} alt="" width={200} height={200} className='img-office' />
-            <p>{product.modelno}</p>
-            <p>{product.subcategoryId.name}</p>
+          <div key={product._id} className="prod-card m-4">
+            <Link to={`/product/${product._id}`}>
+            <img src={product.addimage} alt="" className="w-48 h-48 md:w-64 md:h-64 object-cover rounded-lg shadow-md" />
+            <p className="text-center mt-2">{product.modelno}</p>
+            <p className="text-center">{product.subcategoryId.name}</p>
+            </Link>
           </div>
         ))}
       </div>
     </div>
+
   )
 }
 

@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import React, { useEffect, useState } from 'react'
 import Sidenav from './Sidenav';
-const ImageUpload = () => {
+function Imageupload() {
   const [geturl, setgeturl] = useState([])
   const [getimg, setgetimg] = useState([])
-   document.body.style.display = "flex"
   const [file, setFile] = useState(null);
 
   const handleFileChange = (e) => {
@@ -37,25 +36,25 @@ const ImageUpload = () => {
       })
   }, [])
 
-
   return (
+    <div className='flex flex-col md:flex-row'>
+    <header className='z-50'>
+       <Sidenav></Sidenav>
+       </header><br></br>
+        <div className="items-center flex justify-center flex-col relative lg:left-52">
+     <input type="file" onChange={handleFileChange} className='file-input file-input-bordered w-full max-w-xs' required />
+     <button onClick={handleSubmit} className='btn bg-pink-500 rounded-md mb-2 mt-2 px-4 py-2'>Upload</button><br></br>
+     <div>
+    
+       {geturl &&
+         <a>{`https://api.adhiinteriors.com/${geturl}`}</a>
 
-    <div>
-     <header>
-        <Sidenav></Sidenav>
-        </header>
-      <input type="file" onChange={handleFileChange} required /><br></br>
-      <button onClick={handleSubmit}>Upload</button><br></br>
-      <div>
-     
-        {geturl &&
-          <a>{`https://api.adhiinteriors.com/${geturl}`}</a>
+       }
+     </div>
+     </div>
+     </div>
+   
+  )
+}
 
-        }
-      </div>
-
-    </div>
-  );
-};
-
-export default ImageUpload;
+export default Imageupload

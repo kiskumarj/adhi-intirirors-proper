@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import './admin.css'; // Assuming this is your CSS file
+import React, { useEffect, useState } from 'react'
 import Sidenav from './Sidenav';
 import moment from 'moment';
 function Orders() {
@@ -50,64 +49,71 @@ function Orders() {
       console.error('Error marking request as seen:', error);
     }
   };
-
   return (
-    <div className='product-list-container'>
-      <header>
-        <Sidenav />
-      </header>
-      <h2>Orders</h2>
-
+    <div className="flex flex-col md:flex-row">
+    <header className="md:w-1/4">
+      <Sidenav />
+    </header>
+    <div className="md:w-3/4 px-4 py-6">
+      <h2 className="text-lg font-semibold mb-4">Orders</h2>
+  
       {newInquiryAlert && (
         <div className="alert alert-info" role="alert">
           new inquire came
         </div>
       )}
-
-      <div>
-        <label htmlFor="search">today's req</label>
+  
+      <div className="mb-4">
+        <label htmlFor="search">Today's Requests:</label>
         <input
           type="text"
           id="search"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
+          className="border border-gray-300 rounded-md px-3 py-2 mt-4"
         />
       </div>
-
-      <table className="product-table">
-        <thead>
-          <tr>
-            <th>req-on</th>
-            <th>Model Number</th>
-            <th>Subcategory</th>
-            <th>Customer Name</th>
-            <th>Email</th>
-            <th>Phone</th>
-            <th>Message</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {(searchQuery ? filteredRequests : requests).map((request) => (
-            <tr key={request._id} className={!request.seen ? 'new-request' : ''}>
-              <td>{moment(request.customerDetails.createdAt).format('YYYY-MM-DD HH:mm:ss')}</td>
-              <td>{request.modelNumber}</td>
-              <td>{request.subcategory}</td>
-              <td>{request.customerDetails.name}</td>
-              <td>{request.customerDetails.email}</td>
-              <td>{request.customerDetails.phone}</td>
-              <td>{request.customerDetails.inquiry}</td>
-              <td>
-                {!request.seen && (
-                  <button onClick={() => markAsSeen(request._id)} className='mkse'>Mark as Seen</button>
-                )}
-              </td>
+  
+      <div className="overflow-x-auto">
+        <table className="table-auto w-full">
+          <thead>
+            <tr>
+              <th className="px-4 py-2">Req-On</th>
+              <th className="px-4 py-2">Model Number</th>
+              <th className="px-4 py-2">Subcategory</th>
+              <th className="px-4 py-2">Customer Name</th>
+              <th className="px-4 py-2">Email</th>
+              <th className="px-4 py-2">Phone</th>
+              <th className="px-4 py-2">Message</th>
+              <th className="px-4 py-2">Actions</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {(searchQuery ? filteredRequests : requests).map((request) => (
+              <tr key={request._id} className={!request.seen ? 'new-request' : ''}>
+                <td className="px-4 py-2">{moment(request.customerDetails.createdAt).format('YYYY-MM-DD HH:mm:ss')}</td>
+                <td className="px-4 py-2">{request.modelNumber}</td>
+                <td className="px-4 py-2">{request.subcategory}</td>
+                <td className="px-4 py-2">{request.customerDetails.name}</td>
+                <td className="px-4 py-2">{request.customerDetails.email}</td>
+                <td className="px-4 py-2">{request.customerDetails.phone}</td>
+                <td className="px-4 py-2">{request.customerDetails.inquiry}</td>
+                <td className="px-4 py-2">
+                  {!request.seen && (
+                    <button onClick={() => markAsSeen(request._id)} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                      Mark as Seen
+                    </button>
+                  )}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
-  );
+  </div>
+  
+  )
 }
 
-export default Orders;
+export default Orders

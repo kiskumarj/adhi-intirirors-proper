@@ -1,12 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import './admin.css'; // Import your custom CSS file
-import Sidenav from './Sidenav';
+import React, { useEffect, useState } from 'react'
+import Sidenav from './Sidenav'
 import axios from 'axios';
-import { Navigate, useNavigate } from 'react-router-dom';
-
+import { useNavigate } from 'react-router-dom';
 function Admin() {
-  document.body.style.display = 'flex';
-  const [count, setCount] = useState(0);
+    const [count, setCount] = useState(0);
   const [ocount, setoCount] = useState(0);
   const [acount, setaCount] = useState(0);
   const [bcount, setbCount] = useState(0);
@@ -83,34 +80,41 @@ function Admin() {
       console.error('Error logging out:', error);
     }
   };
-  return (
-    <div className='admin-container'>
-      <header>
-        <Sidenav />
-      </header>
-      <h1 className='dashboard-title'>Dashboard
-      <button onClick={handleLogout} className='logoutbt'>Logout</button>
-      </h1>
-      <div className='count-wrapper'>
-        <div className='count-box'>
-          <p className='count-category'>Total Products:</p>
-          <p className='count'>{count}</p>
+    return (
+        <div className="admin-container flex flex-col md:flex-row">
+        {/* Sidenav */}
+        <header>
+            <Sidenav />
+        </header>
+        
+        {/* Dashboard Content */}
+        <div className="flex flex-col justify-center md:ml-8">
+            <h1 className="dashboard-title text-xl md:text-3xl mb-4 flex items-center">
+                Dashboard
+                <button onClick={handleLogout} className="btn bg-pink-500 rounded-badge px-4 py-2  hover:translate-y-4">Logout</button>
+            </h1>
+    
+            <div className="count-wrapper flex flex-col md:flex-row justify-between">
+                <div className="count-box bg-blue-200 rounded-md lg:w-72 lg:h-32 p-4 mb-4 md:mb-0 md:mr-4">
+                    <p className="count-category text-gray-700 font-semibold">Total Products:</p>
+                    <p className="count text-2xl">{count}</p>
+                </div>
+                <div className="count-box bg-green-200 rounded-md p-4 mb-4 md:mb-0 md:mr-4">
+                    <p className="count-category text-gray-700 font-semibold">Total Orders:</p>
+                    <p className="count text-2xl">{ocount}</p>
+                </div>
+                <div className="count-box bg-yellow-200 rounded-md p-4 mb-4 md:mb-0 md:mr-4">
+                    <p className="count-category text-gray-700 font-semibold">Total Asks:</p>
+                    <p className="count text-2xl">{acount}</p>
+                </div>
+                <div className="count-box bg-purple-200 rounded-md p-4">
+                    <p className="count-category text-gray-700 font-semibold">Total Bookings:</p>
+                    <p className="count text-2xl">{bcount}</p>
+                </div>
+            </div>
         </div>
-        <div className='count-box'>
-          <p className='count-category'>Total Orders:</p>
-          <p className='count'>{ocount}</p>
-        </div>
-        <div className='count-box'>
-          <p className='count-category'>Total Asks:</p>
-          <p className='count'>{acount}</p>
-        </div>
-        <div className='count-box'>
-          <p className='count-category'>Total Bookings:</p>
-          <p className='count'>{bcount}</p>
-        </div>
-      </div>
     </div>
-  );
+    )
 }
 
-export default Admin;
+export default Admin

@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import React, { useEffect, useState } from 'react'
 import Sidenav from './Sidenav';
-
-function Createcategory() {
+function Createcaregory() {
   const [formData, setFormData] = useState({
     categoryName: '',
     subcategoryName: '',
@@ -46,61 +45,50 @@ function Createcategory() {
         console.error('Error adding category:', error);
       });
   };
-
-  const handleSubcategorySubmit = (e) => {
-    e.preventDefault();
-
-    // Send a POST request to create a new subcategory under the selected category
-    axios
-      .post('http://localhost:5000/subcategories', {
-        name: formData.subcategoryName,
-        categoryId: formData.selectedCategoryId,
-      })
-      .then((response) => {
-        setMessage('Subcategory added successfully.');
-        // Clear the subcategory input field
-        setFormData({ ...formData, subcategoryName: '' });
-      })
-      .catch((error) => {
-        console.error('Error adding subcategory:', error);
-      });
-  };
-
   return (
-    <div>
-        <header>
-        <Sidenav></Sidenav>
-        </header>
-      <h2 className='createcate'>Create a New Category or Subcategory</h2>
-      <form onSubmit={handleCategorySubmit}>
-        <div>
-          <label>Category Name:</label><br></br>
-          <input
-            type="text"
-            name="categoryName"
-            value={formData.categoryName}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <button type="submit">Add Category</button>
-      </form>
-      <form onSubmit={handleSubcategorySubmit}>
-        <div>
-          <label>Subcategory Name:</label><br></br>
-          <input
-            type="text"
-            name="subcategoryName"
-            value={formData.subcategoryName}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <button type="submit">Add Subcategory</button>
-      </form>
-      <p>{message}</p>
-    </div>
-  );
+    <div className="flex flex-col md:flex-row ">
+  <header className="z-50">
+    <Sidenav />
+  </header>
+  <div className="md:w-3/4 flex justify-center items-center flex-col relative lg:left-52">
+    <h2 className="text-lg font-semibold mt-6">Create a New Category or Subcategory</h2>
+    <form onSubmit={handleCategorySubmit} className="mt-4 w-full max-w-md md:max-w-lg">
+      <div className="mb-4">
+        <label className="block">Category Name:</label>
+        <input
+          type="text"
+          name="categoryName"
+          value={formData.categoryName}
+          onChange={handleChange}
+          className="input-style"
+          required
+        />
+      </div>
+      <button type="submit" className="btn bg-pink-500 rounded-md mb-2 mt-2 px-4 py-2">
+        Add Category
+      </button>
+    </form>
+    <form onSubmit={handleCategorySubmit} className="mt-4 w-full max-w-md md:max-w-lg">
+      <div className="mb-4">
+        <label className="block">Subcategory Name:</label>
+        <input
+          type="text"
+          name="subcategoryName"
+          value={formData.subcategoryName}
+          onChange={handleChange}
+          className="input-style "
+          required
+        />
+      </div>
+      <button type="submit" className="btn bg-pink-500 rounded-md mb-2 mt-2 px-4 py-2">
+        Add Subcategory
+      </button>
+    </form>
+    <p className="mt-4">{message}</p>
+  </div>
+</div>
+
+  )
 }
 
-export default Createcategory;
+export default Createcaregory
