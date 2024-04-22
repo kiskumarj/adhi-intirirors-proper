@@ -1,24 +1,24 @@
-import { useState } from 'react'
-import Home from './Page/Home';
-import Sofa from './product/Sofa';
-import Login from './Page/Login'
-import Productdetail from './product/Productdetail';
-import Homefurniture from './product/Homefurniture';
-import Office from './product/Office';
-import Educational from './product/Educational';
-import Outdoor from './product/Outdoor';
-import Hotel from './product/Hotel';
-import Metaltables from './product/Metaltables';
-import About from './Page/About';
-import Premiumsofa from './Premium/Premiumsofa';
-import Premiumbed from './Premium/Premiumbed';
-import Tv from './Premium/Tv';
-import Student from './Premium/Student';
-import Premiumchair from './Premium/Premiumchair';
-import Table from './Premium/Table';
-import Workstation from './Premium/Workstation';
-import Storeageunit from './Premium/Storeageunit';
-import Orderform from './product/Orderform';
+import { useState } from "react"
+import Home from "./Page/Home";
+import Sofa from "./product/Sofa";
+import Login from "./Page/Login"
+import Productdetail from "./product/Productdetail";
+import Homefurniture from "./product/Homefurniture";
+import Office from "./product/Office";
+import Educational from "./product/Educational";
+import Outdoor from "./product/Outdoor";
+import Hotel from "./product/Hotel";
+import Metaltables from "./product/Metaltables";
+import About from "./Page/About";
+import Premiumsofa from "./Premium/Premiumsofa";
+import Premiumbed from "./Premium/Premiumbed";
+import Tv from "./Premium/Tv";
+import Student from "./Premium/Student";
+import Premiumchair from "./Premium/Premiumchair";
+import Table from "./Premium/Table";
+import Workstation from "./Premium/Workstation";
+import Storeageunit from "./Premium/Storeageunit";
+import Orderform from "./product/Orderform";
 import Createproduct from "./admin/Createproduct";
 import Createcaregory from "./admin/Createcaregory";
 import Imageupload from "./admin/Imageupload";
@@ -27,9 +27,9 @@ import Products from "./admin/Products";
 import Asked from "./admin/Asked";
 import Orders from "./admin/Orders";
 import Booked from "./admin/Booked";
-import Sginup from './Page/Sginup';
-import PrivateRoute from './utls/PrivateRoute';
-import Error from './utls/Error';
+import Sginup from "./Page/Sginup";
+import PrivateRoute from "./utls/PrivateRoute";
+import Error from "./utls/Error";
 import { BrowserRouter, Route, Routes, redirect } from "react-router-dom";
 function App() {
   return (
